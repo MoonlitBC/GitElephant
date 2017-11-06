@@ -1,5 +1,5 @@
 {
-    "name": "cypresslab/gitelephant",
+    "name": "moonlitbc/gitelephant",
     "description": "An abstraction layer for git written in PHP 5.3",
     "keywords": ["git"],
     "homepage": "http://gitelephant.cypresslab.net/",
@@ -8,6 +8,10 @@
         {
             "name": "Matteo Giachino",
             "email": "matteog@gmail.com"
+        },
+        {
+            "name": "Martin Wong"
+            "email": "mwong@cakeapp.sk"
         }
     ],
     "require": {
