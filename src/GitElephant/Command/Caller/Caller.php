@@ -118,7 +118,8 @@ class Caller implements CallerInterface
         }
         $this->rawOutput = $process->getOutput();
         // rtrim values
-        $values = array_map('rtrim', explode(PHP_EOL, $process->getOutput()));
+        // Windows support use \n instead of PHP_EOL
+        $values = array_map('rtrim', explode("\n", $process->getOutput()));
         $this->outputLines = $values;
 
         return $this;
