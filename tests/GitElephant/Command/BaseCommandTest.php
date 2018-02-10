@@ -137,7 +137,7 @@ class BaseCommandTest extends TestCase
     public function testGetCommandException()
     {
         $bc = BaseCommand::getInstance();
-        $this->setExpectedException('RuntimeException');
+        $this->expectException('RuntimeException');
         $this->fail($bc->getCommand());
     }
 

@@ -21,13 +21,14 @@ use \GitElephant\Objects\Commit;
 use \Symfony\Component\Finder\Finder;
 use \Symfony\Component\Filesystem\Filesystem;
 use \Mockery as m;
+use PHPUnit\Framework\TestCase as basetestCase;
 
 /**
  * Class TestCase
  *
  * @package GitElephant
  */
-class TestCase extends \PHPUnit_Framework_TestCase
+class TestCase extends basetestCase
 {
     /**
      * @var \GitElephant\Command\Caller\CallerInterface

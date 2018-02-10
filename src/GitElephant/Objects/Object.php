@@ -28,7 +28,7 @@ use \GitElephant\Repository;
  *
  * @author Matteo Giachino <matteog@gmail.com>
  */
-class Object implements TreeishInterface
+class GitObject implements TreeishInterface
 {
     const TYPE_BLOB = 'blob';
     const TYPE_TREE = 'tree';

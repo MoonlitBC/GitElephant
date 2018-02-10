@@ -13,12 +13,15 @@
 
 namespace GitElephant\Objects\Commit;
 
+use GitElephant\TestCase;
+
+
 /**
  * Commit message tests
  *
  * @author Mathias Geat <mathias@ailoo.net>
  */
-class MessageTest extends \PHPUnit_Framework_TestCase
+class MessageTest extends TestCase
 {
     protected $shortMsg;
     protected $longMsg;

@@ -30,7 +30,7 @@ use \GitElephant\Objects\Remote;
 use \GitElephant\Objects\Tree;
 use \GitElephant\Objects\Branch;
 use \GitElephant\Objects\Tag;
-use \GitElephant\Objects\Object;
+use \GitElephant\Objects\GitObject;
 use \GitElephant\Objects\Diff\Diff;
 use \GitElephant\Objects\Commit;
 use \GitElephant\Objects\Log;
@@ -856,7 +856,7 @@ class Repository
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      * @return \GitElephant\Objects\Log
      */
-    public function getObjectLog(Object $obj, $branch = null, $limit = 1, $offset = null)
+    public function getObjectLog(GitObject $obj, $branch = null, $limit = 1, $offset = null)
     {
         $command = LogCommand::getInstance($this)->showObjectLog($obj, $branch, $limit, $offset);
 

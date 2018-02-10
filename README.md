@@ -348,6 +348,17 @@ Dependencies
 
 - [PHPUnit](https://github.com/sebastianbergmann/phpunit)
 
+
+# Platform configuration
+
+```php
+"config": {
+      "platform": {
+        "php": "*"
+      }
+    }
+```
+
 Code style
 ----------
 

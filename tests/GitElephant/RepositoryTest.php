@@ -15,7 +15,7 @@ namespace GitElephant;
 
 use GitElephant\Command\ResetCommand;
 use \GitElephant\Objects\Branch;
-use \GitElephant\Objects\Object;
+use \GitElephant\Objects\GitObject;
 use \GitElephant\Objects\Tag;
 
 /**
