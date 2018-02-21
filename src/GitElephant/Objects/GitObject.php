@@ -127,14 +127,14 @@ class GitObject implements TreeishInterface
         $permissions = $matches[1];
         $type        = null;
         switch ($matches[2]) {
-            case Object::TYPE_TREE:
-                $type = Object::TYPE_TREE;
+            case GitObject::TYPE_TREE:
+                $type = GitObject::TYPE_TREE;
                 break;
-            case Object::TYPE_BLOB:
-                $type = Object::TYPE_BLOB;
+            case GitObject::TYPE_BLOB:
+                $type = GitObject::TYPE_BLOB;
                 break;
-            case Object::TYPE_LINK:
-                $type = Object::TYPE_LINK;
+            case GitObject::TYPE_LINK:
+                $type = GitObject::TYPE_LINK;
                 break;
         }
         $sha      = $matches[3];
