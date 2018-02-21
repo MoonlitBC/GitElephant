@@ -343,7 +343,7 @@ EOM;
         $sample = $this->sampleRemoteVerbose();
         $verboseOutput = explode("\n", $sample);
 
-        $mockRemote = $this->getMock(
+        $mockRemote = $this->createMock(
             '\\GitElephant\\Objects\\Remote', //class
             array('getShowOutput', 'getVerboseOutput'), //methods to mock
             array(), //original constructor args
