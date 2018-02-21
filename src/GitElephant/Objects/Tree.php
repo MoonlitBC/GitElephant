@@ -187,7 +187,7 @@ class Tree extends GitObject implements \ArrayAccess, \Countable, \Iterator
      */
     public function isBinary()
     {
-        return $this->isRoot() ? false : Object::TYPE_BLOB === $this->subject->getType();
+        return $this->isRoot() ? false : GitObject::TYPE_BLOB === $this->subject->getType();
     }
 
     /**
@@ -258,7 +258,7 @@ class Tree extends GitObject implements \ArrayAccess, \Countable, \Iterator
             return;
         }
         if (1 === count($outputLines)) {
-            $treeObject = Object::createFromOutputLine($this->repository, $outputLines[0]);
+            $treeObject = GitObject::createFromOutputLine($this->repository, $outputLines[0]);
             if ($treeObject->getSha() === $this->subject->getSha()) {
                 $this->blob = $treeObject;
             }
@@ -274,7 +274,7 @@ class Tree extends GitObject implements \ArrayAccess, \Countable, \Iterator
      *
      * @return int
      */
-    private function sortChildren(Object $a, Object $b)
+    private function sortChildren(GitObject $a, GitObject $b)
     {
         if ($a->getType() == $b->getType()) {
             $names = array($a->getName(), $b->getName());
@@ -283,7 +283,7 @@ class Tree extends GitObject implements \ArrayAccess, \Countable, \Iterator
             return ($a->getName() == $names[0]) ? -1 : 1;
         }
 
-        return $a->getType() == Object::TYPE_TREE || $b->getType() == Object::TYPE_BLOB ? -1 : 1;
+        return $a->getType() == GitObject::TYPE_TREE || $b->getType() == GitObject::TYPE_BLOB ? -1 : 1;
     }
 
     /**
@@ -298,7 +298,7 @@ class Tree extends GitObject implements \ArrayAccess, \Countable, \Iterator
         if ($line == '') {
             return;
         }
-        $slices = Object::getLineSlices($line);
+        $slices = GitObject::getLineSlices($line);
         if ($this->isBlob()) {
             $this->pathChildren[] = $this->blob->getName();
         } else {
