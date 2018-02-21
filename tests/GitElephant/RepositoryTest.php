@@ -44,7 +44,7 @@ class RepositoryTest extends TestCase
     {
         $this->assertEquals($this->getRepository()->getPath(), $this->path);
 
-        $this->setExpectedException('GitElephant\Exception\InvalidRepositoryPathException');
+        $this->expectException('GitElephant\Exception\InvalidRepositoryPathException');
         $repo = new Repository('non-existent-path');
 
         $repo = Repository::open($this->path);
