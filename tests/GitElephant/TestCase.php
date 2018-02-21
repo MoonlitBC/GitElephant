@@ -212,7 +212,7 @@ class TestCase extends basetestCase
      */
     protected function getMockCaller($command, $output)
     {
-        $mock = $this->getMock('GitElephant\Command\Caller\CallerInterface');
+        $mock = $this->createMock('GitElephant\Command\Caller\CallerInterface');
         $mock
             ->expects($this->any())
             ->method('execute')
@@ -227,7 +227,7 @@ class TestCase extends basetestCase
 
     protected function getMockContainer()
     {
-        return $this->getMock('GitElephant\Command\CommandContainer');
+        return $this->createMock('GitElephant\Command\CommandContainer');
     }
 
     protected function addCommandToMockContainer(\PHPUnit_Framework_MockObject_MockObject $container, $commandName)
@@ -249,7 +249,7 @@ class TestCase extends basetestCase
 
     protected function getMockCommand()
     {
-        $command = $this->getMock('Command', array('showCommit'));
+        $command = $this->createMock('Command', array('showCommit'));
         $command
             ->expects($this->any())
             ->method('showCommit')
@@ -260,7 +260,7 @@ class TestCase extends basetestCase
 
     protected function getMockRepository()
     {
-        return $this->getMock(
+        return $this->createMock(
             'GitElephant\Repository',
             array(),
             array(
@@ -272,7 +272,7 @@ class TestCase extends basetestCase
 
     protected function getMockBinary()
     {
-        return $this->getMock('GitElephant\GitBinary');
+        return $this->createMock('GitElephant\GitBinary');
     }
 
     protected function doCommitTest(
