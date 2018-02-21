@@ -31,7 +31,7 @@ use \GitElephant\Command\CatFileCommand;
  *
  * @author Matteo Giachino <matteog@gmail.com>
  */
-class Tree extends Object implements \ArrayAccess, \Countable, \Iterator
+class Tree extends GitObject implements \ArrayAccess, \Countable, \Iterator
 {
     /**
      * @var string
