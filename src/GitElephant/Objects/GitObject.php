@@ -324,6 +324,17 @@ class GitObject implements TreeishInterface
     }
 
     /**
+     * Gets object commit by sha
+     *
+     * @return Commit
+     */
+    public function getCommit()
+    {
+        $log = $this->repository->getLog($this->getSha(), $this->getFullPath(), 1);
+        return $log[0];
+    }
+
+    /**
      * rev-parse command - often used to return a commit tag.
      *
      * @param array         $options the options to apply to rev-parse
