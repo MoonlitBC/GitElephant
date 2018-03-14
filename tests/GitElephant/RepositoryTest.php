@@ -598,7 +598,7 @@ class RepositoryTest extends TestCase
             'array access on tree should give always a node type'
         );
         $this->assertEquals(
-            Object::TYPE_BLOB,
+            GitObject::TYPE_BLOB,
             $secondNode->getType(),
             'second node should be of type tree'
         );
@@ -610,7 +610,7 @@ class RepositoryTest extends TestCase
             'array access on tree should give always a node type'
         );
         $this->assertEquals(
-            Object::TYPE_BLOB,
+            GitObject::TYPE_BLOB,
             $subnode->getType(),
             'subnode should be of type blob'
         );
