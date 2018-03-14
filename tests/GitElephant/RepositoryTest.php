@@ -582,7 +582,7 @@ class RepositoryTest extends TestCase
         $this->assertCount(2, $tree, 'One file in the repository');
         $firstNode = $tree[0];
         $this->assertInstanceOf(
-            'GitElephant\Objects\Object',
+            'GitElephant\Objects\GitObject',
             $firstNode,
             'array access on tree should give always a node type'
         );
@@ -593,7 +593,7 @@ class RepositoryTest extends TestCase
         );
         $secondNode = $tree[1];
         $this->assertInstanceOf(
-            'GitElephant\Objects\Object',
+            'GitElephant\Objects\GitObject',
             $secondNode,
             'array access on tree should give always a node type'
         );
@@ -605,7 +605,7 @@ class RepositoryTest extends TestCase
         $subtree = $this->getRepository()->getTree('master', 'test-folder');
         $subnode = $subtree[0];
         $this->assertInstanceOf(
-            'GitElephant\Objects\Object',
+            'GitElephant\Objects\GitObject',
             $subnode,
             'array access on tree should give always a node type'
         );
