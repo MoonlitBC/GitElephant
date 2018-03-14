@@ -1075,7 +1075,7 @@ class Repository
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      * @return array
      */
-    public function outputContent(Object $obj, $treeish)
+    public function outputContent(GitObject $obj, $treeish)
     {
         $command = CatFileCommand::getInstance($this)->content($obj, $treeish);
 
