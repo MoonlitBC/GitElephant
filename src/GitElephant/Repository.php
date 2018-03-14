@@ -192,7 +192,7 @@ class Repository
     /**
      * Stage the working tree content
      *
-     * @param string|Object $path the path to store
+     * @param string|GitObject $path the path to store
      *
      * @throws \RuntimeException
      * @throws \Symfony\Component\Process\Exception\LogicException
@@ -210,7 +210,7 @@ class Repository
     /**
      * Unstage a tree content
      *
-     * @param string|Object $path the path to unstage
+     * @param string|GitObject $path the path to unstage
      *
      * @throws \RuntimeException
      * @throws \Symfony\Component\Process\Exception\LogicException
@@ -228,8 +228,8 @@ class Repository
     /**
      * Move a file/directory
      *
-     * @param string|Object $from source path
-     * @param string|Object $to   destination path
+     * @param string|GitObject $from source path
+     * @param string|GitObject $to   destination path
      *
      * @throws \RuntimeException
      * @throws \Symfony\Component\Process\Exception\LogicException
@@ -248,7 +248,7 @@ class Repository
     /**
      * Remove a file/directory
      *
-     * @param string|Object $path      the path to remove
+     * @param string|GitObject $path      the path to remove
      * @param bool          $recursive recurse
      * @param bool          $force     force
      *
@@ -803,7 +803,7 @@ class Repository
      * Get a log for a ref
      *
      * @param string|TreeishInterface|array $ref         the treeish to check, as a string, as an object or as an array
-     * @param string|Object                 $path        the physical path to the tree relative to the repository root
+     * @param string|GitObject                 $path        the physical path to the tree relative to the repository root
      * @param int|null                      $limit       limit to n entries
      * @param int|null                      $offset      skip n entries
      * @param boolean|false                 $firstParent skip commits brought in to branch by a merge
@@ -820,7 +820,7 @@ class Repository
      *
      * @param string        $refStart
      * @param string        $refEnd
-     * @param string|Object $path        the physical path to the tree relative to the repository root
+     * @param string|GitObject $path        the physical path to the tree relative to the repository root
      * @param int|null      $limit       limit to n entries
      * @param int|null      $offset      skip n entries
      * @param boolean|false $firstParent skip commits brought in to branch by a merge
@@ -845,7 +845,7 @@ class Repository
     /**
      * Get a log for an object
      *
-     * @param \GitElephant\Objects\Object             $obj    The Object instance
+     * @param \GitElephant\Objects\GitObject             $obj    The Object instance
      * @param null|string|\GitElephant\Objects\Branch $branch The branch to read from
      * @param int                                     $limit  Limit to n entries
      * @param int|null                                $offset Skip n entries
@@ -916,7 +916,7 @@ class Repository
      *
      * @param \GitElephant\Objects\Commit|string      $commit1 A TreeishInterface instance
      * @param \GitElephant\Objects\Commit|string|null $commit2 A TreeishInterface instance
-     * @param null|string|Object                      $path    The path to get the diff for or a Object instance
+     * @param null|string|GitObject                      $path    The path to get the diff for or a Object instance
      *
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
@@ -1085,7 +1085,7 @@ class Repository
     /**
      * output a node raw content
      *
-     * @param \GitElephant\Objects\Object                  $obj     The Object of type BLOB
+     * @param \GitElephant\Objects\GitObject                  $obj     The Object of type BLOB
      * @param \GitElephant\Objects\TreeishInterface|string $treeish A treeish object
      *
      * @throws \RuntimeException
@@ -1094,7 +1094,7 @@ class Repository
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      * @return string
      */
-    public function outputRawContent(Object $obj, $treeish)
+    public function outputRawContent(GitObject $obj, $treeish)
     {
         $command = CatFileCommand::getInstance($this)->content($obj, $treeish);
 
