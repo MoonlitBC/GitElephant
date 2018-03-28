@@ -1066,7 +1066,7 @@ class Repository
     /**
      * output a node content as an array of lines
      *
-     * @param \GitElephant\Objects\TreeObject                  $obj     The Object of type BLOB
+     * @param \GitElephant\Objects\GitObject                  $obj     The Object of type BLOB
      * @param \GitElephant\Objects\TreeishInterface|string $treeish A treeish object
      *
      * @throws \RuntimeException
@@ -1075,7 +1075,7 @@ class Repository
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      * @return array
      */
-    public function outputContent(TreeObject $obj, $treeish)
+    public function outputContent(GitObject $obj, $treeish)
     {
         $command = CatFileCommand::getInstance($this)->content($obj, $treeish);
 
@@ -1094,7 +1094,7 @@ class Repository
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      * @return string
      */
-    public function outputRawContent(TreeObject $obj, $treeish)
+    public function outputRawContent(GitObject $obj, $treeish)
     {
         $command = CatFileCommand::getInstance($this)->content($obj, $treeish);
 
